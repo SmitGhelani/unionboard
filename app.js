@@ -39,7 +39,7 @@ app.use(fileUpload({
 }))
 
 app.use(cors({
-  origin: 'https://unionboard.smitghelani.xyz',
+  origin: 'https://unionboard.smitghelani.xyz:3000',
   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
   credentials: true
 }));
