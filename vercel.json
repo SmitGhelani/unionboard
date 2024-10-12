@@ -1,0 +1,6 @@
+{
+    "version":1,
+    "name": "UniOnBoard Backend Server",
+    "builds": [{"src": "./bin/www", "use": "@vercel/node"}],
+    "routes": [{"src": "/(.*)", "dest": "./bin/www"}]
+}
