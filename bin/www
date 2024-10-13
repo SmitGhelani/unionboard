@@ -5,7 +5,7 @@
  */
 
 require("dotenv").config();
-const app = require('../api/app');
+const app = require('../api');
 const debug = require('debug')('be-unionboard:server');
 const http = require('http');
 
