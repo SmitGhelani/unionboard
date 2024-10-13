@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 exports.isLoggedIn = BigPromise(async (req, res, next) => {
 
     // Check if there is token or not in cookie.
-    if (!(req.cookies.__vercel_live_token)) {
+    if (!(req.cookies.token)) {
         return res.status(400).json({
             success: false,
             message: "Login first to access this page."
