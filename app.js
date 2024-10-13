@@ -53,7 +53,9 @@ app.use('/', predictionRoute);
 
 
 
-
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from Vercel' });
+});
 // catch 404 and forward to error handler
 // app.use(function (req, res, next) {
 //   next(createError(404));
