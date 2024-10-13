@@ -6,16 +6,6 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const fileUpload = require("express-fileupload");
 
-const cloudinary = require('cloudinary');
-const connectWithDB = require("../config/db");
-const userRoute = require('../routes/userRoute');
-const blogRoute = require('../routes/blogRoute');
-const instituteRoute = require('../routes/instituteRoute');
-const adminRoute = require('../routes/adminRoute');
-const courseRoute = require('../routes/videoRoutes');
-const predictionRoute = require('../routes/pedictionRoutes');
-
-
 const cors = require('cors');
 
 
@@ -36,7 +26,6 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload({
   useTempFiles: true,
@@ -48,6 +37,15 @@ app.use(cors({
   methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
   credentials: true
 }));
+
+const cloudinary = require('cloudinary');
+const connectWithDB = require("../config/db");
+const userRoute = require('../routes/userRoute');
+const blogRoute = require('../routes/blogRoute');
+const instituteRoute = require('../routes/instituteRoute');
+const adminRoute = require('../routes/adminRoute');
+const courseRoute = require('../routes/videoRoutes');
+const predictionRoute = require('../routes/pedictionRoutes');
 
 app.use('/', userRoute);
 app.use('/', blogRoute);
