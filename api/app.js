@@ -7,13 +7,13 @@ const logger = require('morgan');
 const fileUpload = require("express-fileupload");
 
 const cloudinary = require('cloudinary');
-const connectWithDB = require("./config/db");
-const userRoute = require('./routes/userRoute');
-const blogRoute = require('./routes/blogRoute');
-const instituteRoute = require('./routes/instituteRoute');
-const adminRoute = require('./routes/adminRoute');
-const courseRoute = require('./routes/videoRoutes');
-const predictionRoute = require('./routes/pedictionRoutes');
+const connectWithDB = require("../config/db");
+const userRoute = require('../routes/userRoute');
+const blogRoute = require('../routes/blogRoute');
+const instituteRoute = require('../routes/instituteRoute');
+const adminRoute = require('../routes/adminRoute');
+const courseRoute = require('../routes/videoRoutes');
+const predictionRoute = require('../routes/pedictionRoutes');
 
 
 const cors = require('cors');
@@ -23,11 +23,11 @@ const cors = require('cors');
 connectWithDB();
 
 const app = express();
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
