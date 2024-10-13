@@ -3,14 +3,22 @@ const nodemailer = require("nodemailer");
 const mailHelper = async (option) => {
 
     // create reusable transporter object using the default SMTP transport
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        port: 587,
-        // secure:false,
-        // ignoreTLS:true,
+    // const transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     port: 587,
+    //     // secure:false,
+    //     // ignoreTLS:true,
+    //     auth: {
+    //         user: "smitghelani.bodhlabs@gmail.com",
+    //         pass: "BoDhLaBs#4321"
+    //     }
+    // });
+    var transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
         auth: {
-            user: "smitghelani.bodhlabs@gmail.com",
-            pass: "BoDhLaBs#4321"
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS
         }
     });
 
@@ -43,16 +51,24 @@ const mailHelper = async (option) => {
 const mailHelperFaculty = async (option) => {
 
     // create reusable transporter object using the default SMTP transport
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        port: 587,
-        // secure:false,
-        // ignoreTLS:true,
+    // const transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     port: 587,
+    //     // secure:false,
+    //     // ignoreTLS:true,
+    //     auth: {
+    //         user: "smitghelani.bodhlabs@gmail.com",
+    //         pass: "BoDhLaBs#4321"
+    //     }
+    // });
+    var transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
         auth: {
-            user: "smitghelani.bodhlabs@gmail.com",
-            pass: "BoDhLaBs#4321"
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS
         }
-    });
+      });
 
     const message = {
         from: 'noreply@gmail.com', // sender address
