@@ -5,7 +5,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const fileUpload = require("express-fileupload");
-const serverless = require("serverless-http");
 
 const cloudinary = require('cloudinary');
 const connectWithDB = require("./config/db");
