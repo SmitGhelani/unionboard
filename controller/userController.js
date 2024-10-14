@@ -902,7 +902,7 @@ exports.adminVerifyOneFaculty = BigPromise(async (req, res, next) => {
 });
 
 exports.getCookieStatus = BigPromise(async (req, res, next) => {
-    const { headers: { cookie } } = req
+    const cookie = req.cookies.token
 
     if (!cookie) {
         res.status(400).json({
@@ -910,7 +910,7 @@ exports.getCookieStatus = BigPromise(async (req, res, next) => {
             message: "Cookies not found"
         })
     }
-    console.log(cookie)
+    
     res.status(200).json({
         success: true,
         token: cookie
