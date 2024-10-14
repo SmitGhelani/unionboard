@@ -6,7 +6,7 @@ const cookieToken = (user, res) => {
         httpOnly: true,     // Prevents client-side access to the cookie
         secure: true,       // Use true if over HTTPS
         sameSite: 'none',    // Helps prevent CSRF
-        domain: '.smitghelani.xyz',
+        // domain: '.smitghelani.xyz',
         expires: new Date(Date.now() + process.env.COOKIE_TIME * 24 * 60 * 60 * 1000),
         // httpOnly: true
     };
