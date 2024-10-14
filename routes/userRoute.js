@@ -40,7 +40,7 @@ router.route("/dashboard/update").put(isLoggedIn, updateUserDetails);
 router.route("/forgotPassword").post(forgotPassword);
 router.route("/resetPassword/:token").post(resetPassword);
 router.route("/updatePassword").post(isLoggedIn, updatePassword);
-router.route("/cookiestatus").post(isLoggedIn, getCookieStatus);
+router.route("/cookiestatus").get(isLoggedIn, getCookieStatus);
 
 
 
