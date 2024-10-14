@@ -910,8 +910,11 @@ exports.getCookieStatus = BigPromise(async (req, res, next) => {
             message: "Cookies not found"
         })
     }
-
     console.log(cookie)
+    res.status(200).json({
+        success: true,
+        token: cookie
+    });
 });
 
 
