@@ -17,7 +17,8 @@ const { signup,
     adminUpdateRole,
     adminDeleteSingleUser,
     adminGetRequestedFaculties,
-    adminVerifyOneFaculty } = require("../controller/userController");
+    adminVerifyOneFaculty,
+    getCookieStatus } = require("../controller/userController");
 
 const { isLoggedIn, customRole } = require("../middleware/userMiddleware");
 
@@ -39,7 +40,7 @@ router.route("/dashboard/update").put(isLoggedIn, updateUserDetails);
 router.route("/forgotPassword").post(forgotPassword);
 router.route("/resetPassword/:token").post(resetPassword);
 router.route("/updatePassword").post(isLoggedIn, updatePassword);
-
+router.route("/cookiestatus").post(isLoggedIn, getCookieStatus);
 
 
 
@@ -53,11 +54,5 @@ router.route("/admin/singleuser/:id")
 
 router.route("/admin/getRequestedFaculties").get(isLoggedIn, customRole("admin"), adminGetRequestedFaculties);
 router.route("/admin/verifyOneFaculty/:id").put(isLoggedIn, customRole("admin"), adminVerifyOneFaculty);
-
-
-
-
-
-
 
 module.exports = router;

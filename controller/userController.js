@@ -901,12 +901,18 @@ exports.adminVerifyOneFaculty = BigPromise(async (req, res, next) => {
 
 });
 
+exports.getCookieStatus = BigPromise(async (req, res, next) => {
+    const { headers: { cookie } } = req
 
+    if (!cookie) {
+        res.status(400).json({
+            success: false,
+            message: "Cookies not found"
+        })
+    }
 
-
-
-
-
+    console.log(cookie)
+});
 
 
 const createActivationToken = (payload) => {
