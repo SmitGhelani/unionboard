@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload({
   useTempFiles: true,
-  tempFileDir: `${process.cwd()}/tmp/`
+  tempFileDir: './tmp/'
 }))
 
 app.use(cors({
