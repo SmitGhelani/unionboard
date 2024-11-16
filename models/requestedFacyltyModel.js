@@ -53,4 +53,4 @@ const requestedFacultySchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model("ReqFaculty", requestedFacultySchema);
+module.exports = mongoose.model("ReqFaculties", requestedFacultySchema);
