@@ -39,7 +39,7 @@ app.use(cors({
 
 app.use(fileUpload({
   useTempFiles: true,
-  tempFileDir: './tmp/'
+  tempFileDir: '/tmp/'
 }))
 
 const userRoute = require('../routes/userRoute');
