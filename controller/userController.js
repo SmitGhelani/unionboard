@@ -62,7 +62,7 @@ exports.signup = BigPromise(async (req, res, next) => {
     // Create token containing all information of user.
     const activation_token = createActivationToken(newUser);
 
-    // Generate url --> https://unionboard-backend.smitghelani.xyz/activateEmail/{activation_token}
+    // Generate url --> https://unionboard-backend.smitghelani.site/activateEmail/{activation_token}
     const url = `${CLIENT_URL}/activateEmail/${activation_token}`
 
     // Attempt to send mail.
@@ -191,7 +191,7 @@ exports.signupFaculty = BigPromise(async (req, res, next) => {
     // Create token containing all information of user.
     const activation_token = createActivationToken(newUser);
 
-    // Generate url --> https://unionboard-backend.smitghelani.xyz/activateEmail/{activation_token}
+    // Generate url --> https://unionboard-backend.smitghelani.site/activateEmail/{activation_token}
     const url = `${CLIENT_URL}/activateEmailFaculty/${activation_token}`
 
     // Attempt to send mail.
@@ -481,7 +481,7 @@ exports.forgotPassword = BigPromise(async (req, res, next) => {
     // Save this token till user validated or token expires.
     await user.save({ validateBeforeSave: false });
 
-    // Create URL ---> https://unionboard-backend.smitghelani.xyz/password/reset/{token}
+    // Create URL ---> https://unionboard-backend.smitghelani.site/password/reset/{token}
     const url = `${CLIENT_URL}/resetPassword/${forgotToken}`
 
     // Attempt to send mail.
@@ -518,7 +518,7 @@ exports.forgotPassword = BigPromise(async (req, res, next) => {
 // this method will we called when user click on url provided in mail.
 exports.resetPassword = BigPromise(async (req, res, next) => {
 
-    // Get token from params ---> https://unionboard-backend.smitghelani.xyz/password/reset/{token}
+    // Get token from params ---> https://unionboard-backend.smitghelani.site/password/reset/{token}
     const { password, conf_password } = req.body
     const { token } = req.params;
 
